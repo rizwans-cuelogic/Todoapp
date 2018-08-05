@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="../css/home.css">
+<style>
+      .color-style {
+            color: #777;
+      }
+      footer{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      color: white;
+      text-align: center;
+      }
+      #btn-login{
+            margin-top:10px;
+      }
+      label{
+            font-weight: 500;
+      }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+      <div class="container">
+            <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="">ToDoApp</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                        <li>
+                              <a href="../html/login.html">Login</a>
+                        </li>
+                        <li>
+                              <a href="../html/registration.html">Register</a>
+                        </li>
+                  </ul>
+
+            </div>
+      </div>
+</nav>
+
+
+<div class="container">
+      <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                  <div class="modal-header">
+                        <h1 class="modal-title color-style">Login</h1>
+                  </div>
+                  <div class="modal-body">
+                        <form id="loginForm"  method="post" action="../html/profile.html" name="login" onsubmit="event.preventDefault; check();">
+                              <div class="form-group">
+                                    <label>Username</label>
+                                    <input class="form-control" type="text" name="userName" id="userName" placeholder="Username" required>
+                              </div>
+                              <div class="form-group">
+                                    <label>password</label>
+                                    <input class="form-control" type="password" name="password" id="password" placeholder="password" required>
+                              </div>
+                              <div class="form-group">
+                              <input id ="btn-login btn-md" class="btn btn-success" type="submit" value="login">
+                              </div>
+                        </form>
+                  </div>
+            </div>
+      </div>
+</div>
+
+<footer class="container-fluid bg-4 text-center">
+      <p class="middle">ToDoApp best task listing platform
+            <a href="#">Rizwan Shaikh</a>
+      </p>
+</footer>
+
+<script src="../../controller/login.js"></script>
+<script src="../../controller/userManagement.js"></script>
+</body>
+</html>
