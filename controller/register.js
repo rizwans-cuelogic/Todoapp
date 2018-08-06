@@ -11,12 +11,14 @@ let register = ()=>{
   let profileImage = document.getElementById("profileImage").files[0] || "";
 
   let reader = new FileReader();
-  if(profileImage){  
-    reader.onload =(e)=>{
-      image = e.target.result;
-    }
+  reader.addEventListener("load", function () {
+    image = reader.result;
+  }, false);
+
+  if (profileImage) {
     reader.readAsDataURL(profileImage);
   }
+
   if(localStorage.getItem('users') === null){
     let users = [] 
     users.push(userName);
@@ -31,8 +33,19 @@ let register = ()=>{
       return false;
     } 
     else{
+
+      // let user = {
+      //   userName,
+      //   firstName,
+      //   lastName,
+      //   address,
+      //   gender,
+      //   password,
+      //   "profileImage" : image
+      // }
+      
       let user = userManagement.createUser(userName,
-        firstName,lastName,address,gender,password,image)
+      firstName,lastName,address,gender,password,image)
       debugger;
       localStorage.setItem(userName, JSON.stringify(user));
       alert("User Is register successfully please log in.....");

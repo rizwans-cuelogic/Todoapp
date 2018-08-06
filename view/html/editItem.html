@@ -33,6 +33,9 @@
           <li>
             <a href="./itemList.html">Items</a>
           </li>
+          <li>
+            <a href="./createItem.html">CreateItem</a>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li>
@@ -43,63 +46,72 @@
       </div>
     </div>
   </nav>
+</div>
+
 
 <div class="container">
 		<div class="row">
 			<div class="col-md-offset-4 col-md-4">
-				<h1>User Profile</h1>
+				<h1>Edit Items</h1>
 			</div>
 		</div><br>
-		<div class="row">
-			<div class="col-md-3">
-				<img id="profileimg" class="img-responsive img" src="">
-      </div>
       <div class="col-md-2">
 
       </div>
 			<div class="col-md-6">
-				<form id="updateform" action="" method="post" name="updateform" onsubmit="event.preventDefault; updateProfile();">
+				<form id="createItemForm" action="./itemList.html" method="post" name="createItemform" onsubmit="event.preventDefault; createItem();">
             <div class="row">
               <div class="form-group col-md-12">
             
-                <label for="userName" class="control-label">Username</label>
-                <input type="text" class="form-control" id="userName" name="userName" placeholder="Username" readonly>
+                <label for="title" class="control-label">title</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="title">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-md-12">
-                <label for="firstName" class="control-label">First Name</label>
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First Name">
+                <label for="Date" class="control-label">Date</label>
+                <input type="Date" class="form-control" id="date" name="Date" placeholder="Date">
               </div>
             </div>
             <div class="row">
               <div class="form-group col-md-12">
-                <label for="lastName" class="control-label">Last Name</label>
-                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="LastName">
+                <label for="categories" class="control-label">Catagories</label><br>
+                <select class="form-control" id="category" name="catagories">
+                <option value="business">Business</option>
+                <option value="study">Study</option>
+                <option value="personal">Personal</option>
+
+              </select>
               </div>
             </div>
-            
+
             <div class="row">
               <div class="form-group col-md-12">
-                <label for="gender" class="control-label">Gender</label>
-                <select class="form-control" id="gender" name="gender">
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
+                <label class="control-label">Reminder</label><br>
+                <label class="radio-inline">
+                    <input type="radio" name="reminder" value="yes">Yes
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="reminder" value="no">No
+                </label>
               </div>
             </div>
-            
+
             <div class="row">
               <div class="form-group col-md-12">
-                <label for="address" class="control-label">Address</label>
-                <textarea id="address" class="form-control" rows="5" cols="10" name="address"></textarea>
+                <label class="control-label">Public</label><br>
+                <label class="radio-inline">
+                    <input type="radio" name="public" value="yes">Yes
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="public" value="no">No
+                </label>
               </div>
             </div>
-            
             <div class="row">
               <div class="form-group col-md-12">
-                <label for="profileImage" class="control-label">profileImage</label>
-                <input type="file" id="profileImage" class="form-control" name="profileImage" accept="image/*">
+                <label for="attachment" class="control-label">Attachment</label>
+                <input type="file" id="attachment" class="form-control" name="attachment" accept="image/*">
               </div>
             </div>  
             <div class="row">
@@ -115,13 +127,19 @@
 </div>
 </div>
 
-  <footer class="container-fluid bg-4 text-center">
+
+
+
+
+<footer class="container-fluid bg-4 text-center">
     <p class="middle">ToDoApp best task listing platform
       <a href="#">Rizwan Shaikh</a>
     </p>
   </footer>
+  <script src="../../controller/moment.js"></script>
   <script src="../../controller/userManagement.js"></script>
-  <script src="../../controller/profile.js"></script>
+  <script src="../../controller/todoList.js"></script>
+  <script src="../../controller/createItem.js"></script>
  
   </body>
   </html>
