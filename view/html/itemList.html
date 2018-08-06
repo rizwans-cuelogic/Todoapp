@@ -9,9 +9,22 @@
     .color-style {
       color: #777;
     }
-
     label {
       font-weight: 500;
+    }
+    #itemContainer{
+      position: relative;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, 'sans-serif';
+    }
+    #deletebt{
+      position:absolute;
+      top:0%;
+      left:83%;
+    }
+    #editbt{
+      position:absolute;
+      top:0%;
+      left:69%;
     }
   </style>
 </head>
@@ -59,6 +72,90 @@
       </div>
 </div>
 
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Item</h4>
+      </div>
+      <div class="modal-body">
+        <form id="editItemForm" method="post" name="editItemform" onsubmit="event.preventDefault; editItem();">
+          <input id="itemId" type="hidden" name="id" value="">
+          <div class="row">
+            <div class="form-group col-md-12">
+              
+              <label for="title" class="control-label">title</label>
+              <input type="text" class="form-control" id="title" name="title" placeholder="title">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="Date" class="control-label">Date</label>
+              <input type="Date" class="form-control" id="date" name="Date" placeholder="Date">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="categories" class="control-label">Catagories</label>
+              <br>
+              <select class="form-control" id="category" name="catagories">
+                <option value="business">Business</option>
+                <option value="study">Study</option>
+                <option value="personal">Personal</option>
+        
+              </select>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label">Reminder</label>
+              <br>
+              <label class="radio-inline">
+                <input type="radio" name="reminder" value="yes">Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="reminder" value="no">No
+              </label>
+            </div>
+          </div>
+        
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label class="control-label">Public</label>
+              <br>
+              <label class="radio-inline">
+                <input type="radio" name="public" value="yes">Yes
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="public" value="no">No
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <label for="attachment" class="control-label">Attachment</label>
+              <input type="file" id="attachment" class="form-control" name="attachment" accept="image/*">
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-12">
+              <button type="submit" class="btn btn-success">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 <footer class="container-fluid bg-4 text-center">
     <p class="middle">ToDoApp best task listing platform
       <a href="#">Rizwan Shaikh</a>
@@ -67,5 +164,6 @@
   <script src="../../controller/userManagement.js"></script>
   <script src="../../controller/todoList.js"></script>
   <script src="../../controller/itemList.js"></script>
+  <script src="../../controller/editItem.js"></script>
   </body>
   </html>

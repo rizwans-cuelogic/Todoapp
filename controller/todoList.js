@@ -13,19 +13,18 @@ class TodoList{
     }
     setItem(item,user){
         debugger;
-        this.itemList = this.getItems(user);
+        this.itemList = this.getItems(user)||[];
         this.itemList.push(item);
         localStorage.setItem('Items'+user.userName,JSON.stringify(this.itemList));
     }
-    updateItem(item,updatedItem){
-        let index = itemList.indexOf(item);
+    updateItem(index,updatedItem,user){
+        this.itemList = this.getItems(user) || [];
         if(index>-1){
-            itemList.splice(index,1);
+            this.itemList.splice(index,1);
         }
-        itemList.push(updatedItem);
+        this.itemList.push(updatedItem);
         localStorage.removeItem('Items'+user.userName);
-        localStorage.setItem('Items'+user.userName,JSON.stringify(itemList));
-
+        localStorage.setItem('Items'+user.userName,JSON.stringify(this.itemList));
     }
     deleteItem(index,user){
         debugger;
