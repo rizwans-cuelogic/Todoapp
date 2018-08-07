@@ -10,6 +10,17 @@ let register = ()=>{
   let password = document.getElementById("password").value || "";
   let profileImage = document.getElementById("profileImage").files[0] || "";
 
+  data = {
+    userName,
+    password
+  }
+
+  const {errors,isValid} = formDataValidation(data);
+  debugger;
+  if(! isValid){
+    alert(errors);
+    return false;
+  }
   let reader = new FileReader();
   reader.addEventListener("load", function () {
     image = reader.result;

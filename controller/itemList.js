@@ -69,7 +69,7 @@ let deleteItem = (index) =>{
 
 }
 let rendereditItem = (index) =>{
-    
+    debugger;
     let user = userManagement.getLoggedInUser();
     let itemList = toDoMangement.getItems(user);
     let item = itemList[index];
