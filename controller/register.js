@@ -1,6 +1,6 @@
 "user strict";
 let register = ()=>{
-  debugger;
+  
   var image;
   let userName = document.getElementById("userName").value || "";
   let firstName = document.getElementById("firstName").value || '';
@@ -32,21 +32,9 @@ let register = ()=>{
       alert("user already exists");
       return false;
     } 
-    else{
-
-      // let user = {
-      //   userName,
-      //   firstName,
-      //   lastName,
-      //   address,
-      //   gender,
-      //   password,
-      //   "profileImage" : image
-      // }
-      
+    else{   
       let user = userManagement.createUser(userName,
-      firstName,lastName,address,gender,password,image)
-      debugger;
+      firstName,lastName,address,gender,password,image);
       localStorage.setItem(userName, JSON.stringify(user));
       alert("User Is register successfully please log in.....");
     }

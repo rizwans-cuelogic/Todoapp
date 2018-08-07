@@ -9,12 +9,10 @@ let isEmpty = (itemList) =>{
     }
 }
 
-let createComponent = () =>{
-    debugger;
-    let user = userManagement.getLoggedInUser();
-    let itemList = toDoMangement.getItems(user);
+let createComponent = (itemList) =>{
+   
     let htmlComponent='';
-
+    document.getElementById('itemList').innerHTML = "";
     let isValid = isEmpty(itemList);
     if(isValid){
         htmlComponent = "<h3>No item please add item</h3>"
@@ -33,7 +31,9 @@ let createComponent = () =>{
               <p>" + item.category + "</p>\
               <p>" + item.date + "</p>\
               <p>Reminder:" + item.reminder + "</p>\
-              <p>public :" + item.ispublic + "</p></div>";
+              <p>ReminderDate:"+item.reminderDate+"</p>\
+              <p>public :" + item.ispublic + "</p>\
+              Done : " +item.isDone+"</div>";
         if(index%2  === 0){
             htmlComponent +="</div>"
         }    
@@ -43,8 +43,9 @@ let createComponent = () =>{
     return htmlComponent;
 }
 
-let renderComponent = ()=>{
-    let htmlComponent = createComponent();
+let renderComponent = (itemList)=>{
+
+    let htmlComponent = createComponent(itemList);
     console.log(htmlComponent);
     if(htmlComponent){
         document.getElementById('itemList').innerHTML = htmlComponent;
@@ -55,7 +56,7 @@ let renderComponent = ()=>{
 }
 
 let deleteItem = (index) =>{
-    debugger;
+
     let user = userManagement.getLoggedInUser();
     let isDone = toDoMangement.deleteItem(index,user)
     if(isDone){
@@ -68,7 +69,7 @@ let deleteItem = (index) =>{
 
 }
 let rendereditItem = (index) =>{
-    debugger;
+    
     let user = userManagement.getLoggedInUser();
     let itemList = toDoMangement.getItems(user);
     let item = itemList[index];
@@ -88,6 +89,12 @@ let rendereditItem = (index) =>{
     else{
         document.editItemform.public[1].checked = true;
     }
+    document.getElementById('isDone').checked = item.isDone;
 }
 
-renderComponent();
+let init = () => {
+    let user = userManagement.getLoggedInUser();
+    let itemList = toDoMangement.getItems(user);
+    renderComponent(itemList);
+}
+init();

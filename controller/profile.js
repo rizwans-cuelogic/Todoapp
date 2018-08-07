@@ -8,7 +8,6 @@
   document.getElementById("address").value = user.address;
 
 let updateProfile =()=>{
-  debugger;
   var image
   let userName = document.getElementById("userName").value || "";
   let firstName = document.getElementById("firstName").value || "";
@@ -24,15 +23,6 @@ let updateProfile =()=>{
     }
     reader.readAsDataURL(profileImage);
   }
-  // user.userName = userName;
-  // user.firstName = firstName;
-  // user.lastName = lastName;
-  // user.address = address;
-  // user.gender = gender;
-  // user.password = user.password;
-  // if(profileImage){
-  //   user.profileImage = image; 
-  // }
   localStorage.removeItem(user.userName);
   user = userManagement.createUser(user.userName,firstName,lastName,address,gender,user.password,image);
   localStorage.setItem(user.userName,JSON.stringify(user));

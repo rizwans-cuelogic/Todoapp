@@ -12,7 +12,7 @@ class TodoList{
         return JSON.parse(items);
     }
     setItem(item,user){
-        debugger;
+        
         this.itemList = this.getItems(user)||[];
         this.itemList.push(item);
         localStorage.setItem('Items'+user.userName,JSON.stringify(this.itemList));
@@ -27,7 +27,6 @@ class TodoList{
         localStorage.setItem('Items'+user.userName,JSON.stringify(this.itemList));
     }
     deleteItem(index,user){
-        debugger;
         this.itemList = this.getItems(user);
         let item = this.itemList.splice(index,1)
         if(item){

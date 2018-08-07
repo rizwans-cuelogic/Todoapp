@@ -62,9 +62,8 @@
 				<form id="createItemForm" action="./itemList.html" method="post" name="createItemform" onsubmit="event.preventDefault; createItem();">
             <div class="row">
               <div class="form-group col-md-12">
-            
                 <label for="title" class="control-label">title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="title">
+                <input type="text" class="form-control" id="title" name="title" placeholder="title" required>
               </div>
             </div>
             <div class="row">
@@ -90,27 +89,33 @@
                 <label class="control-label">Reminder</label><br>
                 <label class="radio-inline">
                     <input type="radio" name="reminder" value="yes
-                    ">Yes
+                    " onchange="setReminderDate();" checked>Yes
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="reminder" value="no">No
+                    <input type="radio" name="reminder" value="no" onchange="disabledReminderDate();">No
                 </label>
-                <input type="reminderDate" class="form-control" id="date" name="Date" placeholder="Date">
+                <input type="date" class="form-control" id="reminderDate" name="Date" placeholder="Date">
                 </div>
               </div>
-            </div>
 
             <div class="row">
               <div class="form-group col-md-12">
                 <label class="control-label">Public</label><br>
                 <label class="radio-inline">
-                    <input type="radio" name="public" value="yes">Yes
+                    <input type="radio" name="public"  value="yes">Yes
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="public" value="no">No
+                    <input type="radio"  name="public" value="no">No
                 </label>
               </div>
             </div>
+            <div class="row">
+              <div class="form-group col-md-12">
+                <input id="isDone" type="checkbox" name="isdone" value=""> 
+                <label class="control-label">Mark as Done</label><br>
+              </div>
+            </div>
+
             <div class="row">
               <div class="form-group col-md-12">
                 <label for="attachment" class="control-label">Attachment</label>
@@ -135,6 +140,7 @@
       <a href="#">Rizwan Shaikh</a>
     </p>
   </footer>
+  <script src="../../controller/common.js"></script>
   <script src="../../controller/moment.js"></script>
   <script src="../../controller/userManagement.js"></script>
   <script src="../../controller/todoList.js"></script>

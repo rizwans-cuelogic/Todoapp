@@ -2,7 +2,6 @@
 let check = ()=>{
     let userName = document.getElementById('userName').value;
     let userPw = document.getElementById('password').value;
-    debugger;
     let useObjJson = localStorage.getItem(userName);
     let userObj = JSON.parse(useObjJson);
 
