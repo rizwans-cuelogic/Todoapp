@@ -64,7 +64,7 @@
 
       </div>
 			<div class="col-md-6">
-				<form id="updateform" action="" method="post" name="updateform" onsubmit="event.preventDefault; updateProfile();">
+				<form id="updateform" action="" method="post" name="updateform" onsubmit="event.preventDefault; updateProfile(event);">
             <div class="row">
               <div class="form-group col-md-12">
             
@@ -97,7 +97,7 @@
             
             <div class="row">
               <div class="form-group col-md-12">
-                <label for="address" class="control-label">Address</label>
+                <label for="address" class="control-label">Address<p>max:50chars</p></label>
                 <textarea id="address" class="form-control" rows="5" cols="10" name="address"></textarea>
               </div>
             </div>
@@ -127,6 +127,8 @@
     </p>
   </footer>
   <script src="../../controller/userManagement.js"></script>
+  <script src="../../controller/isEmpty.js"></script>
+  <script src="../../controller/validation.js"></script>
   <script src="../../controller/profile.js"></script>
  
   </body>
