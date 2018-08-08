@@ -60,7 +60,6 @@ let createComponent = itemList => {
 
 let renderComponent = itemList => {
   let htmlComponent = createComponent(itemList);
-  console.log(htmlComponent);
   if (htmlComponent) {
     document.getElementById("itemList").innerHTML = htmlComponent;
   } else {

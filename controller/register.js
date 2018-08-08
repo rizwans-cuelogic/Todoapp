@@ -1,6 +1,6 @@
 "user strict";
 let register = event => {
-  var image;
+  let image;
   const url = '../html/login.html';
   let userName = document.getElementById("userName").value || "";
   let firstName = document.getElementById("firstName").value || "";

@@ -7,7 +7,7 @@ let setMinDate = () => {
 };
 let createItem = () => {
   let user = userManagement.getLoggedInUser();
-  var image;
+  let image;
   let title = document.getElementById("title").value || "";
   let date = document.getElementById("date").value || "";
   let category = document.getElementById("category").value || "";

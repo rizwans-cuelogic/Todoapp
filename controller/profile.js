@@ -8,7 +8,7 @@ document.getElementById("gender").value = user.gender;
 document.getElementById("address").value = user.address;
 
 let updateProfile = event => {
-  var image;
+  let image;
   let userName = document.getElementById("userName").value || "";
   let firstName = document.getElementById("firstName").value || "";
   let lastName = document.getElementById("lastName").value || "";
