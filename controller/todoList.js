@@ -8,25 +8,27 @@ class TodoList {
     let items = localStorage.getItem("Items" + user.userName);
     return JSON.parse(items);
   }
-  setItem(item, user) {
+  setItem(index,item, user) {
+    debugger;
     this.itemList = this.getItems(user) || [];
-    this.itemList.push(item);
-    localStorage.setItem(
-      "Items" + user.userName,
-      JSON.stringify(this.itemList)
-    );
-  }
-  updateItem(index, updatedItem, user) {
-    this.itemList = this.getItems(user) || [];
-    if (index > -1) {
-      this.itemList.splice(index, 1);
+    if(index===null){
+      this.itemList.push(item);
+      localStorage.setItem(
+        "Items" + user.userName,
+        JSON.stringify(this.itemList)
+      );
     }
-    this.itemList.push(updatedItem);
-    localStorage.removeItem("Items" + user.userName);
-    localStorage.setItem(
+    else{
+      if (index > -1) {
+        this.itemList.splice(index, 1);
+      }
+      this.itemList.push(item);
+      localStorage.removeItem("Items" + user.userName);
+      localStorage.setItem(
       "Items" + user.userName,
       JSON.stringify(this.itemList)
-    );
+      );
+    }
   }
   deleteItem(index, user) {
     this.itemList = this.getItems(user);

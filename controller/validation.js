@@ -1,6 +1,5 @@
 "use strict";
 let registerDataValidation = data => {
-  debugger;
   let errors = {};
   let regularE = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
   if (data.userName.trim().length < 4) {

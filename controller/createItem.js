@@ -37,7 +37,7 @@ let createItem = () => {
     isDone,
     attachment: image
   };
-  toDoMangement.setItem(item, user);
+  toDoMangement.setItem(null, item, user);
   alert("item created successfully");
 };
 setMinDate();

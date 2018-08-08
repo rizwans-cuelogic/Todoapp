@@ -1,5 +1,5 @@
 "use strict";
-class UserManagement {
+class User {
   createUser(userName, firstName, lastName, address, gender, password, image) {
     let user = {};
     user.userName = userName;
@@ -11,7 +11,6 @@ class UserManagement {
     user.profileImage = image;
     return user;
   }
-
   setLoggedInUser(user) {
     localStorage.setItem("loggedInUser", JSON.stringify(user));
   }
@@ -29,4 +28,4 @@ class UserManagement {
     localStorage.setItem("currentUser", "");
   }
 }
-let userManagement = new UserManagement();
+let userManagement = new User();

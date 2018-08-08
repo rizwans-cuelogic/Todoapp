@@ -31,6 +31,6 @@ let editItem = () => {
     reminderDate,
     attachment: image
   };
-  toDoMangement.updateItem(index, updatedItem, user);
+  toDoMangement.setItem(index, updatedItem, user);
   alert("item updated successfully...");
 };

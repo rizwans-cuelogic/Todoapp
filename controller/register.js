@@ -1,6 +1,7 @@
 "user strict";
 let register = event => {
   var image;
+  const url = '../html/login.html';
   let userName = document.getElementById("userName").value || "";
   let firstName = document.getElementById("firstName").value || "";
   let lastName = document.getElementById("lastName").value || "";
@@ -16,10 +17,10 @@ let register = event => {
   };
 
   const { errors, isValid } = registerDataValidation(data);
-  debugger;
+  
   if (!isValid) {
     alert(JSON.stringify(errors));
-    //event.preventDefault();
+    event.preventDefault();
     return false;
   }
   let reader = new FileReader();
@@ -40,7 +41,7 @@ let register = event => {
     users.push(userName);
     localStorage.setItem("users", JSON.stringify(users));
     alert("User Is register successfully please log in.....");
-    return true;
+    window.location.assign(url);
   } else {
     let users = userManagement.getUsers();
     if (users.includes(userName)) {
@@ -58,7 +59,7 @@ let register = event => {
       );
       localStorage.setItem(userName, JSON.stringify(user));
       alert("User Is register successfully please log in.....");
-      return true;
+      window.location.assign(url);
     }
   }
 };
